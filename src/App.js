@@ -4,7 +4,6 @@ export default function App() {
       <Bill />
       <Percentage>How did you like the service ?</Percentage>
       <Percentage>How did your friend like the service ?</Percentage>
-
       <Result />
       <Reset />
     </div>
