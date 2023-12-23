@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Bill />
+      <Percentage>How did you like the service ?</Percentage>
+      <Percentage>How did your friend like the service ?</Percentage>
+
+      <Result />
+      <Reset />
     </div>
   );
 }
 
-export default App;
+function Bill() {
+  return (
+    <label>
+      How much was the bill ?
+      <input type="text" placeholder="Enter the Bill Vaue" />
+    </label>
+  );
+}
+
+function Percentage({ children }) {
+  return (
+    <div>
+      <label>{children}</label>
+      <select>
+        <option value="0">Dissatisfied (0%)</option>
+        <option value="5">It was Okay (5%)</option>
+        <option value="10">It was good (10%)</option>
+        <option value="20">Absolutely amazing (20%)</option>
+      </select>
+    </div>
+  );
+}
+
+function Result() {
+  return <p>You pay total (A + B)</p>;
+}
+
+function Reset() {
+  return <button>Reset</button>;
+}
